@@ -1,5 +1,7 @@
 ﻿using Logic;
+using Logic.Enums;
 using System;
+using System.Timers;
 using System.Windows;
 using System.Windows.Media;
 using System.Windows.Threading;
@@ -19,7 +21,7 @@ namespace TrafficLight
             try
             {
                 InitializeComponent();
-                TrafficLightColor.CurrentColor = TrafficLightColor.EnumColor.Red;
+                TrafficLightColor.CurrentColor = EnumColor.Stop;
                 timer = new DispatcherTimer() { Interval = new TimeSpan(0, 0, 5) };
                 timer.Tick += TrafficLightColor.Change;
                 timer.Tick += ChangeColor;
@@ -30,25 +32,32 @@ namespace TrafficLight
                 MessageBox.Show(ex.Message);
             }
         }
-        public void ChangeColor(object sender, object e)
+        public void ChangeColor(object sender, object e) // хз куда убрать.. Я  тупой
         {
 
             switch (TrafficLightColor.CurrentColor)
             { 
-                case TrafficLightColor.EnumColor.Red:
-                    RedLight.Fill = Brushes.Red;
-                    GreenLight.Fill = Brushes.Black;
+                case EnumColor.Go:
+                    RedLight.Fill = Brushes.Black;
+                    GreenLight.Fill = new SolidColorBrush(Color.FromRgb(0, 255, 0));
                     YellowLight.Fill = Brushes.Black;
                     break;
-                case TrafficLightColor.EnumColor.Yellow:
+                case EnumColor.Wait:
                     RedLight.Fill = Brushes.Black;
                     GreenLight.Fill = Brushes.Black;
                     YellowLight.Fill = Brushes.Yellow;
                     break;
-                case TrafficLightColor.EnumColor.Green:
-                    RedLight.Fill = Brushes.Black;
-                    GreenLight.Fill = new SolidColorBrush(Color.FromRgb(0,255,0));
+                case EnumColor.Stop:
+
+                    RedLight.Fill = Brushes.Red;
+                    GreenLight.Fill = Brushes.Black;
                     YellowLight.Fill = Brushes.Black;
+
+                    break;
+                case EnumColor.Ready:
+                    RedLight.Fill = Brushes.Red;
+                    GreenLight.Fill = Brushes.Black;
+                    YellowLight.Fill = Brushes.Yellow;
                     break;
             }
         }

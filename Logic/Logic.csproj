@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Enums\EnumColor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TrafficLightColor.cs" />
   </ItemGroup>
