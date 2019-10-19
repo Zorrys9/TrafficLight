@@ -4,3 +4,9 @@ C:\Users\Марина\source\repos\TrafficLight\Logic\obj\Debug\Logic.csproj.Cor
 C:\Users\Марина\source\repos\TrafficLight\Logic\obj\Debug\Logic.dll
 C:\Users\Марина\source\repos\TrafficLight\Logic\obj\Debug\Logic.pdb
 C:\Users\Марина\source\repos\TrafficLight\Logic\obj\Debug\Logic.csprojAssemblyReference.cache
+C:\Users\sasch\source\repos\TrafficLight\Logic\bin\Debug\Logic.dll
+C:\Users\sasch\source\repos\TrafficLight\Logic\bin\Debug\Logic.pdb
+C:\Users\sasch\source\repos\TrafficLight\Logic\obj\Debug\Logic.csprojAssemblyReference.cache
+C:\Users\sasch\source\repos\TrafficLight\Logic\obj\Debug\Logic.csproj.CoreCompileInputs.cache
+C:\Users\sasch\source\repos\TrafficLight\Logic\obj\Debug\Logic.dll
+C:\Users\sasch\source\repos\TrafficLight\Logic\obj\Debug\Logic.pdb

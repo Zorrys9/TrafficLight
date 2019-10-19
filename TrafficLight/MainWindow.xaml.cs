@@ -14,7 +14,7 @@ namespace TrafficLight
     public partial class MainWindow : Window
     {
 
-        readonly DispatcherTimer timer;
+        public readonly DispatcherTimer timer;
         public int count = 0;
         public MainWindow()
         {
@@ -22,7 +22,7 @@ namespace TrafficLight
             {
                 InitializeComponent();
                 TrafficLightColor.CurrentColor = EnumColor.Stop;
-                timer = new DispatcherTimer() { Interval = new TimeSpan(0, 0, 5) };
+                timer = new DispatcherTimer() { Interval = new TimeSpan(0, 0, 4) };
                 timer.Tick += TrafficLightColor.Change;
                 timer.Tick += ChangeColor;
                 timer.Start();
@@ -32,7 +32,7 @@ namespace TrafficLight
                 MessageBox.Show(ex.Message);
             }
         }
-        public void ChangeColor(object sender, object e) // хз куда убрать.. Я  тупой
+        public void ChangeColor(object sender, object e) // хз куда убрать... Я  тупой
         {
 
             switch (TrafficLightColor.CurrentColor)
@@ -58,6 +58,12 @@ namespace TrafficLight
                     RedLight.Fill = Brushes.Red;
                     GreenLight.Fill = Brushes.Black;
                     YellowLight.Fill = Brushes.Yellow;
+                    break;
+                case EnumColor.None:
+                    timer.Interval = new TimeSpan(0, 0, 1);
+                    RedLight.Fill = Brushes.Black;
+                    GreenLight.Fill = Brushes.Black;
+                    YellowLight.Fill = Brushes.Black;
                     break;
             }
         }

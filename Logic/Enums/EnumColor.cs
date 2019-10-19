@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Logic.Enums
-{    public enum EnumColor
-        {
-            Stop,
-            Ready,
-            Go,
-            Wait
-        }
+﻿namespace Logic.Enums
+{
+    public enum EnumColor
+    {
+        Stop,   ///Красный цвет
+        Ready,  /// Желтый + красный
+        Go,     /// Зеленый
+        Wait,   /// Желтый
+        None    /// Все черные
+    }
 }
